@@ -1,4 +1,10 @@
 <div id='cdata'> 
-	<h2> <%= @cdatum.id %> </h2>
-	<%= @cdatum.value1 %>
+	<table>
+		<h2> <%= @cdatum.id %> </h2>
+
+		<tr><td> Value1</td> <td> Value2</td></tr>
+		<tr><td> <%= @cdatum.value1 %></td> <td> <%= @cdatum.value2 %></td> </tr>
+	</table>
+
 </div>
+<%= link_to "Edit Data", [:edit, @survey, @cdatum] %>

@@ -26,6 +26,20 @@ before_filter :find_cdatum, :only => [:show, :edit, :update, :destroy]
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @cdatum.update_attributes(params[:cdatum])
+      flash[:notice] = "Data has been updated."
+      redirect_to [@survey, @cdatum]
+    else
+      flash[:alert] = "Data has not been updated."
+      render :action => "edit"
+    end
+  end
+
   private
     def find_survey
 	@survey = Survey.find(params[:survey_id])
