@@ -8,3 +8,5 @@
 
 </div>
 <%= link_to "Edit Data", [:edit, @survey, @cdatum] %>
+<%= link_to "Delete Data", [@survey, @cdatum], :method => :delete,
+	:confirm => "Sure?" %>

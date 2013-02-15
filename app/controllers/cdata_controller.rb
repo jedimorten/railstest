@@ -40,6 +40,12 @@ before_filter :find_cdatum, :only => [:show, :edit, :update, :destroy]
     end
   end
 
+  def destroy
+	@cdatum.destroy
+	flash[:notice] = "Data has been deleted."
+	redirect_to @survey
+  end
+
   private
     def find_survey
 	@survey = Survey.find(params[:survey_id])
