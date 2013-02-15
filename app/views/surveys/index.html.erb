@@ -1,1 +1,11 @@
+<h2>Surveys</h2>
+<ul>
+  <% @surveys.each do |survey| %>
+  <li> 
+	<%= link_to survey.title, survey %>
+	<%= link_to "Edit Survey", edit_survey_path(survey) %>
+ </li>
+  <% end %>
+</ul>
 <%= link_to "New Survey", new_survey_path %>
+
