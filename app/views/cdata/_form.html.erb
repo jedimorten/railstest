@@ -1,0 +1,12 @@
+<%= form_for [@survey, @cdatum] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :value1 %><br>
+    <%= f.text_field :value1 %>
+  </p>
+  <p>
+    <%= f.label :value2 %><br>
+    <%= f.text_field :value2 %>
+</p>
+  <%= f.submit %>
+<% end %>

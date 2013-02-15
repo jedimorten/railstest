@@ -1,4 +1,6 @@
 class SurveysController < ApplicationController
+  before_filter :find_survey, :only => [:show, :edit, :update, :destroy]
+
   def index
     @surveys = Survey.all
   end
@@ -36,4 +38,19 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find(params[:id])
   end
+
+  def destroy
+    @survey = Survey.find(params[:id])
+    @survey.destroy
+    flash[:notice] = "Survey is deleted"
+    redirect_to surveys_path
+  end
+
+  private
+	def find_survey
+	  @survey = Survey.find(params[:id])
+ 	  rescue ActiveRecord::RecordNotFound
+	  flash[:alert] = "Survey you looked was not found"
+	  redirect_to surveys_path
+	end
 end

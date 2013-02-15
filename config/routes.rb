@@ -1,6 +1,9 @@
 Api::Application.routes.draw do
 root :to => "surveys#index"
-resources :surveys
+resources :surveys do
+	resources :cdata
+	resources :cdatum
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

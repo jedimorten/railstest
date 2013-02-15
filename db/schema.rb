@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215092550) do
+ActiveRecord::Schema.define(:version => 20130215151414) do
+
+  create_table "cdata", :force => true do |t|
+    t.float    "value1"
+    t.float    "value2"
+    t.integer  "survey_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "cdata", ["survey_id"], :name => "index_cdata_on_survey_id"
 
   create_table "surveys", :force => true do |t|
     t.string   "title"
