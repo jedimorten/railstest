@@ -1,4 +1,6 @@
 Api::Application.routes.draw do
+  get "users/index"
+
   devise_for :users
 
 root :to => "surveys#index"

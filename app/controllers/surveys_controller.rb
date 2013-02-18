@@ -1,8 +1,9 @@
 class SurveysController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :find_survey, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where("user_id = ?", current_user.id)
   end
 
   def new
