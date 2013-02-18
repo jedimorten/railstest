@@ -8,6 +8,7 @@
 	  </li>
 	<% end %>
 </ul>
+<p><small> Owned by <%= @survey.user_id %> </small> </p>
 
 <%= link_to "Edit survey", edit_survey_path(@survey) %>
 <%= link_to "Delete Survey", @survey, :method => :delete, :confirm => "Sure?" %>

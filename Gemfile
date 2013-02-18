@@ -50,3 +50,5 @@ group :test do
 	gem 'database_cleaner'
 	
 end
+
+gem 'devise', '~> 1.4.3'

@@ -1,6 +1,8 @@
 class CdataController < ApplicationController
+before_filter :authenticate_user!, :except => [:index, :show]
 before_filter :find_survey
 before_filter :find_cdatum, :only => [:show, :edit, :update, :destroy]
+
   def index
 
   end
@@ -12,8 +14,6 @@ before_filter :find_cdatum, :only => [:show, :edit, :update, :destroy]
   def show
 
   end
-
-
 
   def create
    @cdatum = @survey.cdata.build(params[:cdatum])
