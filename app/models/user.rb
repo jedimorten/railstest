@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :surveys, :dependent => :delete_all 
   
+  def to_s
+	"#{email} (#{admin? ? "Admin" : "User"})"
+  end
+  
 end
