@@ -1,3 +1,8 @@
 class Admin::BaseController < ApplicationController
-	before_filter :autorize_admin!
+	before_filter :authorize_admin!
+
+	def index
+
+	end
+
 end
