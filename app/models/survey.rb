@@ -3,4 +3,8 @@ class Survey < ActiveRecord::Base
   has_many :cdata, :dependent => :delete_all
   belongs_to :user
   validates :title, :presence => true
+
+  def dataCollection
+	cdata.all
+  end
 end
