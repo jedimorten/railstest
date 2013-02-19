@@ -15,7 +15,9 @@ end
 
 namespace :rapi do
 	namespace :v1 do
-		resources :surveys
+		resources :surveys do
+			resources :cdata
+		end
 	end
 end
   # The priority is based upon order of creation:

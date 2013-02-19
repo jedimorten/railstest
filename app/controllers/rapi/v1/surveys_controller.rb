@@ -1,5 +1,5 @@
 class Rapi::V1::SurveysController < Rapi::V1::BaseController
-  before_filter :find_survey, :only => [:show, :update]
+  before_filter :find_survey, :only => [:show, :update, :destroy]
   def index
 	respond_with(Survey.where("user_id = ?", current_user.id))
   end
@@ -21,12 +21,18 @@ class Rapi::V1::SurveysController < Rapi::V1::BaseController
 	@survey.update_attributes(params[:survey])
 	respond_with(@survey, :methods => "dataCollection")
   end
+
+  def destroy
+	@survey.destroy
+	respond_with(@survey)
+  end
   
   private
 	def find_survey
 	  @survey = Survey.where(:user_id => current_user.id, :id => params[:id]).first
-	 rescue ActiveRecord::RecordNotFound 
+	  if @survey == nil	 
 	    error = { :error => "Survey does not exist." }
   	    respond_with(error, :status => 404)	 
+	  end
 	end
 end
