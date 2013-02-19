@@ -12,6 +12,12 @@ namespace :admin do
 	root :to => "base#index"
 	resources :users
 end
+
+namespace :rapi do
+	namespace :v1 do
+		resources :surveys
+	end
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

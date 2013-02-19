@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218162514) do
+ActiveRecord::Schema.define(:version => 20130219115733) do
 
   create_table "cdata", :force => true do |t|
     t.float    "value1"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130218162514) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.boolean  "admin",                                 :default => false
+    t.string   "authentication_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
