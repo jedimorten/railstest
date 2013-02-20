@@ -21,13 +21,17 @@
 <h1> <%= link_to "Home", root_path %> </h1>
 <nav>
 <% if user_signed_in? %>
-	Signed in as <%= current_user.email %>
+	Signed in as <%= current_user %><br>
 	<%= admins_only do %>
 		<%= link_to "Admin", admin_root_path %><br>
 	<% end %>
+	<%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br>
 <% else %>
 	<%= link_to "Sign up", new_user_registration_path %>
 	<%= link_to "Sign in", new_user_session_path %>
+	<br>
+	Or use <%= link_to "Twitter", user_omniauth_authorize_path(:twitter),
+				      :id => "sign_in_with_twitter" %>
 <% end %>
 </nav>
 <%= yield %>

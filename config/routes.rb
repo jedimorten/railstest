@@ -1,7 +1,10 @@
 Api::Application.routes.draw do
   get "users/index"
 
-  devise_for :users
+  devise_for :users, :controllers => {
+	:registrations => "registrations",
+  	:omniauth_callbacks => "users/omniauth_callbacks"
+  }
 
 root :to => "surveys#index"
 resources :surveys do

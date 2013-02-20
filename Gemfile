@@ -44,11 +44,13 @@ group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
 end
 
-group :test do
-	gem 'cucumber-rails'
-	gem 'capybara'
-	gem 'database_cleaner'
-	
-end
+
+
+
+
+
+
+
+gem 'oa-oauth', '~> 0.2.2', :require => 'omniauth/oauth'
 
 gem 'devise', '~> 1.4.3'
