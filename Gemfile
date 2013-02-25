@@ -44,13 +44,12 @@ group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
 end
 
+gem 'oauth'
+gem 'oauth2', '~> 0.5'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 
 
-
-
-
-
-
-gem 'oa-oauth', '~> 0.2.2', :require => 'omniauth/oauth'
-
-gem 'devise', '~> 1.4.3'
+gem 'devise', '~> 1.5'
