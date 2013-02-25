@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_for_facebook(response)
 	user = User.find_by_facebook_id(response['uid'])
+	Rails.logger.warn response 
 	unless user
 	  user = User.new(:email => "#{response['uid']}@facebook.com",
 			  :password => Devise.friendly_token[0,20])
