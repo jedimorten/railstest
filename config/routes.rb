@@ -2,7 +2,6 @@ Api::Application.routes.draw do
   get "users/index"
 
   devise_for :users, :controllers => {
-	:registrations => "registrations",
   	:omniauth_callbacks => "users/omniauth_callbacks"
   }
 
@@ -21,6 +20,8 @@ namespace :rapi do
 		resources :surveys
 	end
 end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222110254) do
+ActiveRecord::Schema.define(:version => 20130228160917) do
 
   create_table "cdata", :force => true do |t|
     t.float    "value1"
@@ -26,9 +26,22 @@ ActiveRecord::Schema.define(:version => 20130222110254) do
   create_table "surveys", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "user_id"
+    t.string   "typeOfSurvey"
+    t.string   "local_id"
+    t.string   "varName1"
+    t.string   "varName2"
+    t.string   "names1"
+    t.string   "names2"
+    t.string   "units"
+    t.string   "timeUnit1"
+    t.string   "timeUnit2"
+    t.string   "numberOfCategories"
+    t.integer  "numOfVals"
+    t.integer  "currentIdOfData"
+    t.text     "dataCollection"
   end
 
   create_table "users", :force => true do |t|

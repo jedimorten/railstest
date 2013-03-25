@@ -40,6 +40,8 @@ gem 'jquery-rails'
 
 gem 'therubyracer'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
 end

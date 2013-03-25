@@ -35,6 +35,7 @@ module Api
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery_ujs)
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -58,5 +59,13 @@ module Api
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Rack-cors
+    config.middleware.use Rack::Cors do
+	allow do
+		origins '*'
+		resource '/rapi/v1/*', :headers => :any, :methods => [:get, :put, :post, :delete, :options]
+	end
+   end
   end
 end
